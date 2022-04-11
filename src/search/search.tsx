@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Button, TextField} from "@mui/material";
 import './search.scss'
 import Results from "./results";
@@ -15,31 +15,41 @@ const Search = () => {
     const [formValues, setFormValues] = useState(defaultValues);
     const [resultSearch, setResultSearch] = useState([]);
     const [isSearchDone, setIsDone]= useState<boolean>(false);
-    const [displayHistory, setDisplayHistory] = useState<boolean>(true)
+    const [displayHistory, setDisplayHistory] = useState<boolean>(false);
+    const [history, setHistory] = useState<any>([])
 
-    const handleSubmit = async (event:any) => {
+    useEffect(() => {
+        const localValues = localStorage.getItem("history");
+        console.log('localValues', localValues);
+        if (localValues) {
+            const values = Array.from(JSON.parse(localValues));
+            console.log('values', values);
+            setHistory(values);
+        }
+    }, []);
+
+
+   const handleSubmit = async (event:any) => {
         event.preventDefault();
-        console.log(formValues);
         try {
             const url = `http://www.omdbapi.com/?apikey=f4eecfeb&type=movie&s=${formValues.title}`;
-            console.log('url', url);
             const fetchAPI = await axios.get(url);
             setResultSearch(fetchAPI.data.Search);
             setIsDone(true);
+            setDisplayHistory(false)
         } catch (error) {
             console.error(error);
         }
     };
 
     const handleInputChange = (e:any) => {
-        console.log('e', e);
         const copyDefaultValue = { ... defaultValues};
         copyDefaultValue.title = e.target.value
         setFormValues(copyDefaultValue)
+
     };
 
     const detectClick = () => {
-        console.log('toto');
     }
 
     const getMargin =() => {
@@ -50,8 +60,28 @@ const Search = () => {
 
 
     const displayResult = () => {
-        return <Results resultSearch={resultSearch} isSearchDone={isSearchDone}/>
+        return <Results
+            addFilmToHistory={addFilmToHistory}
+            history={history}
+            resultSearch={resultSearch}
+            isSearchDone={isSearchDone}/>
     }
+
+    const addFilmToHistory = (film:any) => {
+        const copyHistory = [...history]
+        if (copyHistory.length === 4) {
+            copyHistory.pop()
+        };
+        const dataStorage = {
+            title: film.Title,
+            id: film.imdbID
+        };
+        copyHistory.push(dataStorage)
+        copyHistory.reverse();
+        setHistory(copyHistory);
+        localStorage.setItem("history", JSON.stringify(copyHistory));
+    }
+
 
     return (
         <div className='wrapper-search'>
@@ -67,17 +97,20 @@ const Search = () => {
                             label="titre du film"
                             type="text"
                             value={formValues.title}
-                            onClick={() => console.log('tata')}
+                            onClick={() => setDisplayHistory(true)}
                             onChange={handleInputChange}
                         />
-                    <History />
+                        {displayHistory && (
+                            <History history={history}/>
+                        ) }
                     </div>
                     <Button variant="contained" color="secondary" type="submit">
-                        Submit
+                        Rechercher
                     </Button>
                 </form>
             </div>
             {displayResult()}
+
         </div>
     )
 
