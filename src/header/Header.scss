@@ -1,0 +1,21 @@
+.wrapper-header {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background: rgba(0, 206, 203, 0.2);
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+  .wrapper-text {
+    display: flex;
+    align-items: center;
+
+    p {
+      font-weight: 600;
+      margin-left: 20px;
+      color: #08072c;
+    }
+  }
+}

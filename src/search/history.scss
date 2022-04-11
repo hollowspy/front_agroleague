@@ -1,0 +1,30 @@
+.wrapper-history {
+  height: 264px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  border: 1px #a3dad933 solid;
+
+  .header-history {
+    font-size: 10px;
+  }
+
+  .wrapper-item-history {
+    text-align: left;
+    cursor: pointer;
+
+    &:nth-child(even) {
+      background-color: #a3dad933;
+    }
+
+    &:hover {
+      background-color: rgba(0, 206, 203, 0.2)
+    }
+
+    p {
+      margin: 0;
+      padding: 20px
+    }
+  }
+
+}

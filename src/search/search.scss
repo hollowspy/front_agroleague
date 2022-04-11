@@ -1,0 +1,27 @@
+.wrapper-search {
+  text-align: center;
+
+  .wrapper-form {
+    text-align: center;
+
+    .input-field {
+      width: 300px;
+      margin: 0 auto 0;
+      position: relative;
+
+      &.display-history {
+        margin: 0 auto 280px
+      }
+      .MuiFormControl-root {
+        width: 100%;
+      }
+    }
+
+    Button {
+      margin-top: 20px;
+      background-color: rgba(0, 206, 203, 1);
+      color: #08072c
+    }
+
+  }
+}
