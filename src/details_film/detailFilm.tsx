@@ -1,29 +1,36 @@
 import React, {useEffect, useState} from 'react';
 import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { RequestsProvider } from '../Providers/request-service';
 
 import './detailFilm.scss'
 import axios from "axios";
 import ListingActors from "./listingActors";
 import {Button, Link, Rating, Tooltip} from "@mui/material";
+import {FilmFullI} from "../../Interfaces/film_full";
 
 
 
 const DetailFilm = (props: any) => {
-    const [fullFilm, setFullFilm] = useState<any>(null)
+    const [fullFilm, setFullFilm] = useState<FilmFullI | null >(null)
     const [rating, setRating] = useState<number>(0);
-    const location = useLocation();
     const params = useParams();
 
 
     useEffect(() => {
-        // declare the async data fetching function
         const fetchData = async () => {
             const id = params.id;
-            const url = `http://www.omdbapi.com/?apikey=f4eecfeb&i=${id}`;
-            const fetchAPI = await axios.get(url);
-            setFullFilm(fetchAPI.data);
-            const formatRating = parseInt(fetchAPI.data.imdbRating, 10);
-            setRating((formatRating) / 2);
+            // const url = `http://www.omdbapi.com/?apikey=f4eecfeb&i=${id}`;
+            if (params.id) {
+                try {
+                    const fetchAPI = await RequestsProvider.getFullFilm(params.id.toString());
+                    const data:FilmFullI = fetchAPI
+                    setFullFilm(data);
+                    const formatRating = parseInt(fetchAPI.data.imdbRating, 10);
+                    setRating((formatRating) / 2);
+                } catch (e) {
+                    console.error(e)
+                }
+            }
         }
         fetchData()
             .catch(console.error);;

@@ -1,13 +1,16 @@
 import React, {useEffect, useState} from 'react';
-
-import './history.scss'
 import {useNavigate} from "react-router-dom";
 
+import './history.scss'
+import {FilmHistoryI} from "../../Interfaces/film_history";
 
-const History = ({history}: any) => {
+
+const History = ({history}: {
+    history: FilmHistoryI[]
+}) => {
     const navigate = useNavigate();
 
-    const onNavigateToFilm = (f: any) => {
+    const onNavigateToFilm = (f: FilmHistoryI) => {
         navigate(`film/${f.id}`, {
             state: {
                 filmId: f.id,
@@ -22,9 +25,9 @@ const History = ({history}: any) => {
             )
         }
         return (
-            history.map((f: any) => {
+            history.map((f: FilmHistoryI, index:number) => {
                 return (
-                    <div onClick={() => onNavigateToFilm(f)} className="wrapper-item-history">
+                    <div key={index} onClick={() => onNavigateToFilm(f)} className="wrapper-item-history">
                         <p>{f.title}</p>
                     </div>
                 )

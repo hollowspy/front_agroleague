@@ -11,7 +11,7 @@ import {ListSubheader} from "@mui/material";
 
 const ListingActors = ({actors}:any) => {
 
-    const [arrActors, setArrActors] = useState<any>([]);
+    const [arrActors, setArrActors] = useState<string[]>([]);
 
     useEffect(() => {
         const formatActors = actors.split(',');

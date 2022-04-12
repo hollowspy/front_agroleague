@@ -1,19 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// @ts-ignore
+import * as ReactDOMClient from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
-//const root = ReactDOM.createRoot(document.getElementById('root'));
-const rootElement = document.getElementById('root');
-if (!rootElement) throw new Error('Failed to find the root element');
-// @ts-ignore
-const root = ReactDOM.createRoot(rootElement);
 
-root.render(
+// const rootElement = document.getElementById('root');
+const rootElement = ReactDOMClient.createRoot(document.getElementById('root'));
+if (!rootElement) throw new Error('Failed to find the root element');
+
+rootElement.render(
     <React.StrictMode>
-        <App/>
+        <App />
     </React.StrictMode>
 );
 

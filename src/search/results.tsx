@@ -1,22 +1,25 @@
 import React, {useState} from 'react';
 import './results.scss'
 import { useNavigate, useLocation } from "react-router-dom";
+import {FilmSearchI} from "../../Interfaces/film_search";
 
 
-const Results = ({isSearchDone, resultSearch, history, addFilmToHistory} : any) => {
+const Results = ({isSearchDone, resultSearch, addFilmToHistory} : {
+    isSearchDone: boolean,
+    resultSearch: FilmSearchI[],
+    addFilmToHistory: Function
+}) => {
     const navigate = useNavigate();
 
-    const selectFilm = (f:any) => {
-        setTimeout(() => {
-            navigate(`film/${f.imdbID}`, {
-                state: {
-                    filmId: f.imdbID,
-                }
-            });
-        })
+    const selectFilm = (f:FilmSearchI) => {
+        navigate(`film/${f.imdbID}`, {
+            state: {
+                filmId: f.imdbID,
+            }
+        });
     }
 
-    const displayResult =() => {
+    const displayResult = () => {
         if (isSearchDone && (resultSearch && resultSearch.length === 0) || !resultSearch) {
             return (
                 <div>
@@ -27,9 +30,9 @@ const Results = ({isSearchDone, resultSearch, history, addFilmToHistory} : any) 
         return (
             <div>
                 <div className="wrapper-results">
-                {resultSearch.map((f:any) => {
+                {resultSearch.map((f:FilmSearchI, index:number) => {
                     return (
-                            <div onClick={() => {addFilmToHistory(f); selectFilm(f)}} className="card-film">
+                            <div key={index} onClick={() => {addFilmToHistory(f); selectFilm(f)}} className="card-film">
                                 <p>{f.Title}</p>
                                 <img src={f.Poster} alt="Poster of film"/>
                             </div>
