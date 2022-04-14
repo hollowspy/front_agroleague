@@ -9,6 +9,9 @@ import History from './history'
 
 import React, {useEffect, useState} from 'react';
 import {Button, TextField} from "@mui/material";
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
+import events from "node:events";
 
 const axios = require('axios');
 
@@ -29,6 +32,8 @@ const Search = () => {
     const [isSearchDone, setIsDone]= useState<boolean>(false);
     const [displayHistory, setDisplayHistory] = useState<boolean>(false);
     const [history, setHistory] = useState<FilmHistoryI[]>([])
+    const [countPagination, setCountPagination] = useState<number | null>(null);
+    const [currentPage, setCurrentPage] = useState<number>(1);
 
     useEffect(() => {
         const localValues = localStorage.getItem("history");
@@ -38,30 +43,29 @@ const Search = () => {
             setHistory(values);
         }
     }, []);
+    
+    const fethDataAPI = async (page:number) => {
+        try {
+            console.log('page', page);
+            const fetchAPI = await RequestsProvider.searchFilms(formValues.title, page);
+            const data:FilmSearchI[] = fetchAPI.Search
+            setResultSearch(data);
+            setIsDone(true);
+            setDisplayHistory(false)
+            if (!countPagination) {
+                const totalPages =  Math.ceil((parseInt(fetchAPI.totalResults, 10) / data.length));
+                console.log('totalPages', totalPages)
+                setCountPagination(totalPages);
+            }
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
 
    const handleSubmit = async (event:React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-        // try {
-        //     const url = `http://www.omdbapi.com/?apikey=f4eecfeb&type=movie&s=${formValues.title}`;
-        //     const fetchAPI = await axios.get(url);
-        //     const data:FilmSearchI[] = fetchAPI.data.Search
-        //     setResultSearch(data);
-        //     setIsDone(true);
-        //     setDisplayHistory(false)
-        // } catch (error) {
-        //     console.error(error);
-        // }
-       try {
-           const fetchAPI = await RequestsProvider.searchFilms(formValues.title);
-           const data:FilmSearchI[] = fetchAPI.Search
-           setResultSearch(data);
-           setIsDone(true);
-           setDisplayHistory(false)
-
-       } catch (error) {
-           console.error(error)
-       }
+       event.preventDefault();
+       await fethDataAPI(currentPage);
     };
 
     const handleInputChange = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -101,12 +105,17 @@ const Search = () => {
         setHistory(copyHistory);
         localStorage.setItem("history", JSON.stringify(copyHistory));
     }
+    
+        const handleChangePage = async (event:React.ChangeEvent<unknown>, value:number) => {
+        setCurrentPage(value);
+        await fethDataAPI(value);
+    }
 
 
     return (
         <div className='wrapper-search'>
             <p>
-                Vous recherchez un film ?? Entrer le nom d'un film pour voir les résultats
+                Vous recherchez un film ?? Entrer le nom d'un film pour voir les résultats. Mais oui super
             </p>
             <div className="wrapper-form">
                 <form onSubmit={handleSubmit}>
@@ -130,7 +139,15 @@ const Search = () => {
                 </form>
             </div>
             {displayResult()}
-
+            {isSearchDone && countPagination && (
+                <div className="wrapper-pagination">
+                    <Stack spacing={2}>
+                        <Pagination
+                            onChange={handleChangePage}
+                            count={countPagination} />
+                    </Stack>
+                </div>
+            )}
         </div>
     )
 
