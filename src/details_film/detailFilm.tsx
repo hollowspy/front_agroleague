@@ -1,16 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import { useNavigate, useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { RequestsProvider } from '../Providers/request-service';
-
 import './detailFilm.scss'
-import axios from "axios";
 import ListingActors from "./listingActors";
-import {Button, Link, Rating, Tooltip} from "@mui/material";
-import {FilmFullI} from "../../Interfaces/film_full";
+import {Button, Rating } from "@mui/material";
+import {FilmFullI} from "../Interfaces/film_full";
 
 
 
-const DetailFilm = (props: any) => {
+
+const DetailFilm = () => {
     const [fullFilm, setFullFilm] = useState<FilmFullI | null >(null)
     const [rating, setRating] = useState<number>(0);
     const params = useParams();
@@ -18,14 +17,16 @@ const DetailFilm = (props: any) => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const id = params.id;
-            // const url = `http://www.omdbapi.com/?apikey=f4eecfeb&i=${id}`;
             if (params.id) {
                 try {
-                    const fetchAPI = await RequestsProvider.getFullFilm(params.id.toString());
+                    const fetchAPI:FilmFullI = await RequestsProvider.getFullFilm(params.id.toString());
                     const data:FilmFullI = fetchAPI
-                    setFullFilm(data);
-                    const formatRating = parseInt(fetchAPI.data.imdbRating, 10);
+                    const formattedData:FilmFullI = {
+                        ...data,
+                        Poster: data.Poster === 'N/A' ? 'https://via.placeholder.com/300x419' : data.Poster
+                    }
+                    setFullFilm(formattedData);
+                    const formatRating = parseInt(formattedData.imdbRating, 10);
                     setRating((formatRating) / 2);
                 } catch (e) {
                     console.error(e)
@@ -33,7 +34,7 @@ const DetailFilm = (props: any) => {
             }
         }
         fetchData()
-            .catch(console.error);;
+            .catch(console.error);
     }, [])
 
 

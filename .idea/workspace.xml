@@ -22,15 +22,15 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff077fbd-826f-47e2-9cfc-bfe393ba41da" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/back.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/front.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="ff077fbd-826f-47e2-9cfc-bfe393ba41da" name="Changes" comment="Add pagination">
+      <change afterPath="$PROJECT_DIR$/src/Interfaces/api.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/film_full.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/film_full.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/film_history.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/film_history.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interfaces/film_search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/film_search.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Providers/request-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Providers/request-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search/results.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/results.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search/search.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/search.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/details_film/detailFilm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/details_film/detailFilm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/results.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/results.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/search/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/search.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,8 +86,19 @@
       <workItem from="1649786937824" duration="6854000" />
       <workItem from="1649857537389" duration="197000" />
       <workItem from="1649913842234" duration="295000" />
-      <workItem from="1649914163219" duration="5108000" />
+      <workItem from="1649914163219" duration="5156000" />
+      <workItem from="1649919766090" duration="11000" />
+      <workItem from="1649999267250" duration="2241000" />
+      <workItem from="1650002829447" duration="2615000" />
     </task>
+    <task id="LOCAL-00001" summary="Add pagination">
+      <created>1649919737585</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1649919737585</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -105,15 +116,27 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add pagination" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add pagination" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="753" y="447" key="#ESLint" timestamp="1649857732650">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="753" y="447" key="#ESLint/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1649857732650" />
-    <state x="360" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1649914734515">
+    <state x="-1230" y="240" key="#Web_Browsers" timestamp="1650003100018">
+      <screen x="-1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="-1230" y="240" key="#Web_Browsers/-1920.0.1920.1080/0.0.1792.1120@-1920.0.1920.1080" timestamp="1650003100018" />
+    <state x="360" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1650000705334">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="360" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1649914734515" />
+    <state x="360" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1650000705334" />
+    <state x="496" y="273" key="Vcs.Push.Dialog.v2" timestamp="1649919771103">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="496" y="273" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1649919771103" />
     <state x="561" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1649915660600">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
@@ -124,7 +147,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Providers/request-service.ts</url>
-          <line>26</line>
+          <line>32</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

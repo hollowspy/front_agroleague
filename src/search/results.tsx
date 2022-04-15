@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
 import './results.scss'
 import { useNavigate, useLocation } from "react-router-dom";
-import {FilmSearchI} from "../../Interfaces/film_search";
+import {FilmSearchI} from "../Interfaces/film_search";
+
 
 
 const Results = ({isSearchDone, resultSearch, addFilmToHistory} : {

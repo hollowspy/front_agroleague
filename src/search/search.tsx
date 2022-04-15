@@ -1,5 +1,4 @@
-import {FilmSearchI} from "../../Interfaces/film_search";
-import {FilmHistoryI} from "../../Interfaces/film_history";
+
 import { RequestsProvider } from '../Providers/request-service';
 
 import './search.scss'
@@ -11,9 +10,11 @@ import React, {useEffect, useState} from 'react';
 import {Button, TextField} from "@mui/material";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
-import events from "node:events";
 
-const axios = require('axios');
+import {resAPISearch} from "../Interfaces/api";
+import {FilmSearchI} from "../Interfaces/film_search";
+import {FilmHistoryI} from "../Interfaces/film_history";
+
 
 
 
@@ -39,22 +40,33 @@ const Search = () => {
         const localValues = localStorage.getItem("history");
         if (localValues) {
             const values:FilmHistoryI[] = Array.from(JSON.parse(localValues));
-            console.log('values', values)
             setHistory(values);
         }
     }, []);
     
-    const fethDataAPI = async (page:number) => {
+    
+    const checkImgData = (listFilm: any):FilmSearchI[] => {
+        const formattedFilm = listFilm.map((film:FilmSearchI) => {
+            const urlPoster = (film.Poster === 'N/A') ? 'https://via.placeholder.com/150x222' : film.Poster;
+            return {
+                ...film,
+                Poster: urlPoster
+            }
+        })
+        return formattedFilm
+    }
+    
+    const fethDataAPI = async (page:number):Promise<void> => {
         try {
-            console.log('page', page);
-            const fetchAPI = await RequestsProvider.searchFilms(formValues.title, page);
+            const fetchAPI:resAPISearch = await RequestsProvider.searchFilms(formValues.title, page);
             const data:FilmSearchI[] = fetchAPI.Search
-            setResultSearch(data);
+            const formattedData = await checkImgData(data);
+            console.log('formattedData', formattedData);
+            setResultSearch(formattedData);
             setIsDone(true);
             setDisplayHistory(false)
             if (!countPagination) {
                 const totalPages =  Math.ceil((parseInt(fetchAPI.totalResults, 10) / data.length));
-                console.log('totalPages', totalPages)
                 setCountPagination(totalPages);
             }
         } catch (error) {
@@ -63,20 +75,20 @@ const Search = () => {
     }
 
 
-   const handleSubmit = async (event:React.FormEvent<HTMLFormElement>) => {
+   const handleSubmit = async (event:React.FormEvent<HTMLFormElement>):Promise<void> => {
        event.preventDefault();
        await fethDataAPI(currentPage);
     };
 
-    const handleInputChange = (e:React.ChangeEvent<HTMLInputElement>) => {
-        const copyDefaultValue = { ... defaultValues};
+    const handleInputChange = (e:React.ChangeEvent<HTMLInputElement>):void => {
+        const copyDefaultValue = {... defaultValues};
         copyDefaultValue.title = e.target.value
         setFormValues(copyDefaultValue)
 
     };
 
 
-    const getMargin =() => {
+    const getMargin = ():string => {
         return (displayHistory)
             ? 'input-field display-history'
             : 'input-field'
@@ -91,7 +103,7 @@ const Search = () => {
     }
 
 
-    const addFilmToHistory = (film:FilmSearchI) => {
+    const addFilmToHistory = (film:FilmSearchI):void => {
         const copyHistory:FilmHistoryI[] = [...history]
         if (copyHistory.length === 4) {
             copyHistory.pop()
@@ -106,7 +118,7 @@ const Search = () => {
         localStorage.setItem("history", JSON.stringify(copyHistory));
     }
     
-        const handleChangePage = async (event:React.ChangeEvent<unknown>, value:number) => {
+        const handleChangePage = async (event:React.ChangeEvent<unknown>, value:number):Promise<void> => {
         setCurrentPage(value);
         await fethDataAPI(value);
     }
