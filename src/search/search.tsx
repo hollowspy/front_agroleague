@@ -95,15 +95,7 @@ const Search = () => {
     }
 
 
-    const displayResult = () => {
-        return <Results
-            addFilmToHistory={addFilmToHistory}
-            resultSearch={resultSearch}
-            isSearchDone={isSearchDone}/>
-    }
-
-
-    const addFilmToHistory = (film:FilmSearchI):void => {
+   const addFilmToHistory = (film:FilmSearchI):void => {
         const copyHistory:FilmHistoryI[] = [...history]
         if (copyHistory.length === 4) {
             copyHistory.pop()
@@ -150,7 +142,12 @@ const Search = () => {
                     </Button>
                 </form>
             </div>
-            {displayResult()}
+            {isSearchDone && (
+                <Results
+                    addFilmToHistory={addFilmToHistory}
+                    resultSearch={resultSearch}
+                    isSearchDone={isSearchDone}/>
+            )}
             {isSearchDone && countPagination && (
                 <div className="wrapper-pagination">
                     <Stack spacing={2}>

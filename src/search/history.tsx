@@ -2,7 +2,8 @@ import React, {useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 
 import './history.scss'
-import {FilmHistoryI} from "../../Interfaces/film_history";
+import {FilmHistoryI} from "../Interfaces/film_history";
+
 
 
 const History = ({history}: {

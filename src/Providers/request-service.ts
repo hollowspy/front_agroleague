@@ -1,7 +1,6 @@
 import {resAPISearch} from "../Interfaces/api";
 import {AxiosResponse} from "axios";
 import {FilmFullI} from "../Interfaces/film_full";
-import {FilmSearchI} from "../Interfaces/film_search";
 
 const axios = require('axios');
 
