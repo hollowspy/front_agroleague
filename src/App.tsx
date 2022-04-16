@@ -19,7 +19,7 @@ const RoutesApps = () => {
 
 
 
-function App() {
+const App =() => {
   return (
     <div>
       <Header />
