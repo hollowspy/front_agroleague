@@ -22,9 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff077fbd-826f-47e2-9cfc-bfe393ba41da" name="Changes" comment="Clean code. Lint">
+    <list default="true" id="ff077fbd-826f-47e2-9cfc-bfe393ba41da" name="Changes" comment="Fix new search. Set page At 1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/search.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +86,7 @@
       <workItem from="1649999267250" duration="2241000" />
       <workItem from="1650002829447" duration="2646000" />
       <workItem from="1650037367211" duration="1066000" />
-      <workItem from="1650085537049" duration="10038000" />
+      <workItem from="1650085537049" duration="11096000" />
     </task>
     <task id="LOCAL-00001" summary="Add pagination">
       <created>1649919737585</created>
@@ -130,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650094786006</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fix new search. Set page At 1">
+      <created>1650097196511</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1650097196511</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +162,8 @@
     <MESSAGE value="Update library test package related to React 18" />
     <MESSAGE value="3 tests made, but only simple test :(" />
     <MESSAGE value="Clean code. Lint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Clean code. Lint" />
+    <MESSAGE value="Fix new search. Set page At 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix new search. Set page At 1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="753" y="447" key="#ESLint" timestamp="1649857732650">
@@ -166,10 +174,10 @@
       <screen x="-1920" y="0" width="1920" height="1080" />
     </state>
     <state x="-1230" y="240" key="#Web_Browsers/-1920.0.1920.1080/0.0.1792.1120@-1920.0.1920.1080" timestamp="1650003100018" />
-    <state x="359" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1650088798549">
+    <state x="359" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1650097851218">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="359" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1650088798549" />
+    <state x="359" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1650097851218" />
     <state x="628" y="337" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1650094246347">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
