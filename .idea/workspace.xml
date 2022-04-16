@@ -22,16 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff077fbd-826f-47e2-9cfc-bfe393ba41da" name="Changes" comment="3 tests made, but only simple test :(">
+    <list default="true" id="ff077fbd-826f-47e2-9cfc-bfe393ba41da" name="Changes" comment="Clean code. Lint">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/details_film/detailFilm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/details_film/detailFilm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/details_film/listingActors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/details_film/listingActors.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search/Search.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/search.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search/history.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/history/history.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search/history.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/history/history.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search/results.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/results/results.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/search/results.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/results/results.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/search/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/search.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -94,7 +86,7 @@
       <workItem from="1649999267250" duration="2241000" />
       <workItem from="1650002829447" duration="2646000" />
       <workItem from="1650037367211" duration="1066000" />
-      <workItem from="1650085537049" duration="8961000" />
+      <workItem from="1650085537049" duration="10038000" />
     </task>
     <task id="LOCAL-00001" summary="Add pagination">
       <created>1649919737585</created>
@@ -131,7 +123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650094168549</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Clean code. Lint">
+      <created>1650094786006</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1650094786006</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -155,7 +154,8 @@
     <MESSAGE value="Type all request service with axios" />
     <MESSAGE value="Update library test package related to React 18" />
     <MESSAGE value="3 tests made, but only simple test :(" />
-    <option name="LAST_COMMIT_MESSAGE" value="3 tests made, but only simple test :(" />
+    <MESSAGE value="Clean code. Lint" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean code. Lint" />
   </component>
   <component name="WindowStateProjectService">
     <state x="753" y="447" key="#ESLint" timestamp="1649857732650">
@@ -174,24 +174,13 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="628" y="337" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1650094246347" />
-    <state x="496" y="273" key="Vcs.Push.Dialog.v2" timestamp="1650087451040">
+    <state x="496" y="273" key="Vcs.Push.Dialog.v2" timestamp="1650094790515">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
-    <state x="496" y="273" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1650087451040" />
+    <state x="496" y="273" key="Vcs.Push.Dialog.v2/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1650094790515" />
     <state x="561" y="241" width="670" height="676" key="search.everywhere.popup" timestamp="1649915660600">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="561" y="241" width="670" height="676" key="search.everywhere.popup/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1649915660600" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Providers/request-service.ts</url>
-          <line>31</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
