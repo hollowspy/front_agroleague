@@ -1,16 +1,19 @@
-
-import { RequestsProvider } from '../Providers/request-service';
-
-import './search.scss'
-
-import Results from "./results";
-import History from './history'
-
 import React, {useEffect, useState} from 'react';
 import {Button, TextField} from "@mui/material";
 import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 
+// Services
+import { RequestsProvider } from '../Providers/request-service';
+
+// CSS
+import './search.scss'
+
+// Components
+import Results from "./results/results";
+import History from "./history/history";
+
+// Interfaces
 import {resAPISearch} from "../Interfaces/api";
 import {FilmSearchI} from "../Interfaces/film_search";
 import {FilmHistoryI} from "../Interfaces/film_history";

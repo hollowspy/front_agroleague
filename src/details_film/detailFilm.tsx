@@ -1,9 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from "react-router-dom";
-import { RequestsProvider } from '../Providers/request-service';
-import './detailFilm.scss'
+
+// Components
 import ListingActors from "./listingActors";
 import {Button, Rating } from "@mui/material";
+
+// Service
+import { RequestsProvider } from '../Providers/request-service';
+
+// CSS
+import './detailFilm.scss'
+
+// Interface
 import {FilmFullI} from "../Interfaces/film_full";
 
 

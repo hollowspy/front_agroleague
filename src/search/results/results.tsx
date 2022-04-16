@@ -1,7 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { useNavigate } from "react-router-dom";
+
+//CSS
 import './results.scss'
-import { useNavigate, useLocation } from "react-router-dom";
-import {FilmSearchI} from "../Interfaces/film_search";
+
+// Interface
+import {FilmSearchI} from "../../Interfaces/film_search";
+
 
 
 
@@ -21,7 +26,7 @@ const Results = ({isSearchDone, resultSearch, addFilmToHistory} : {
     }
 
     const displayResult = () => {
-        if (isSearchDone && (resultSearch && resultSearch.length === 0) || !resultSearch) {
+        if (isSearchDone && ((resultSearch && resultSearch.length === 0) || !resultSearch)) {
             return (
                 <div>
                     <p>Votre recherche n'a donné aucun résultat. Veuillez recommencer</p>

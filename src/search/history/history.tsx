@@ -1,8 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {useNavigate} from "react-router-dom";
 
+// Interface
+import {FilmHistoryI} from "../../Interfaces/film_history";
+
+// CSS
 import './history.scss'
-import {FilmHistoryI} from "../Interfaces/film_history";
+
 
 
 

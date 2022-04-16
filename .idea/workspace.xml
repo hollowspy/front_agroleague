@@ -22,14 +22,17 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff077fbd-826f-47e2-9cfc-bfe393ba41da" name="Changes" comment="Update library test package related to React 18">
-      <change afterPath="$PROJECT_DIR$/src/search/Search.test.tsx" afterDir="false" />
+    <list default="true" id="ff077fbd-826f-47e2-9cfc-bfe393ba41da" name="Changes" comment="3 tests made, but only simple test :(">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/header/Header.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/header/Header.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/details_film/detailFilm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/details_film/detailFilm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/details_film/listingActors.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/details_film/listingActors.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/Search.test.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/search.test.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/history.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/history/history.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/history.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/history/history.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/results.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/results/results.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/results.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/results/results.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/search/search.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/search/search.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +72,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/search/results" />
+      <recent name="$PROJECT_DIR$/src/search/history" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -89,7 +94,7 @@
       <workItem from="1649999267250" duration="2241000" />
       <workItem from="1650002829447" duration="2646000" />
       <workItem from="1650037367211" duration="1066000" />
-      <workItem from="1650085537049" duration="8334000" />
+      <workItem from="1650085537049" duration="8961000" />
     </task>
     <task id="LOCAL-00001" summary="Add pagination">
       <created>1649919737585</created>
@@ -119,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650087439162</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="3 tests made, but only simple test :(">
+      <created>1650094168549</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1650094168549</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,7 +154,8 @@
     <MESSAGE value="type axios and request API" />
     <MESSAGE value="Type all request service with axios" />
     <MESSAGE value="Update library test package related to React 18" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update library test package related to React 18" />
+    <MESSAGE value="3 tests made, but only simple test :(" />
+    <option name="LAST_COMMIT_MESSAGE" value="3 tests made, but only simple test :(" />
   </component>
   <component name="WindowStateProjectService">
     <state x="753" y="447" key="#ESLint" timestamp="1649857732650">
@@ -157,6 +170,10 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="359" y="199" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1650088798549" />
+    <state x="628" y="337" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1650094246347">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="628" y="337" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1080/0.0.1792.1120@0.0.1792.1120" timestamp="1650094246347" />
     <state x="496" y="273" key="Vcs.Push.Dialog.v2" timestamp="1650087451040">
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
